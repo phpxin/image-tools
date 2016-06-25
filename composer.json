@@ -1,5 +1,6 @@
 {
     "name": "lixin/image-tools",
+	"minimum-stability": "dev",
     "require": {
         "intervention/image": "dev-master",
         "intervention/gif": "dev-master"
@@ -10,5 +11,10 @@
             "name": "llxx",
             "email": "lixin65535@126.com"
         }
-    ]
+    ],
+	"autoload": {
+        "psr-4": {
+            "lixin\\": "src",
+        }
+    }
 }
