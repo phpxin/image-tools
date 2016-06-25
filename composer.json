@@ -1,8 +1,8 @@
 {
-    "name": "lixin/ImageTools",
+    "name": "lixin/image-tools",
     "description": "lixin ImageTools",
     "keywords": ["lixin", "ImageTools"],
-    "homepage": "https://github.com/phpxin/ImageTools",
+    "homepage": "https://github.com/phpxin/image-tools",
     "type": "project",
     "minimum-stability": "stable",
     "require": {
