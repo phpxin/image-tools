@@ -9,9 +9,6 @@
         "intervention/image" : "dev-master",
 		"intervention/gif" : "dev-master"
     },
-	"Tag"{
-		"version" : "1.0.0"
-	},
 	"autoload": {
         "psr-0": {
             "lixin\\": "src"
