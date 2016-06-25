@@ -7,11 +7,19 @@
  */
 
 namespace lixin ;
-
+use \Intervention\Image\ImageManagerStatic as Image;
 
 class ImageTools{
 
-    public static function gifInsertWater ($animation_buffer, $water, $savePath, $position="top-left"){
+    /**
+     * 给gif图片加水印
+     * @param string $animation_buffer 二进制图片数据（可以通过 file_get_contents 获取）
+     * @param string $water 二进制图片数据/图片路径
+     * @param string $save_path 保存路径
+     * @param string $position 水印位置，top-left (default)/top/top-right/left/center/right/bottom-left/bottom/bottom-right
+     * @return bool 当save_path不为空时，返回true；当save_path 为空时返回处理后的图片二进制数据
+     */
+    public static function gifInsertWater ($animation_buffer, $water, $save_path='', $position="top-left"){
 
 
         $decoder = new \Intervention\Gif\Decoder();
@@ -25,10 +33,9 @@ class ImageTools{
         $frames_count = $decoded->countFrames();
         $frames_loop = $decoded->getLoops();
 
-        //var_dump($width); var_dump($height); var_dump($frames_loop); var_dump($frames_count); exit();
 
         if ($frames_count<=0){
-            return ['status'=>false, 'info'=>'至少要存在一帧'];
+            throw new \RuntimeException("至少要存在一帧") ;
         }
 
         $result_encoder = new \Intervention\Gif\Encoder() ;
@@ -48,10 +55,6 @@ class ImageTools{
 
             // 使用这个设置头信息，比较稳定
             $encoder->setFromDecoded($decoded, $index);
-
-            //$encoder->setFrames([$frame]) ;
-            //$encoder->setLoops($frames_loop);
-            //$encoder->setCanvas($width, $height);
 
             $gif = $encoder->encode();
 
@@ -92,22 +95,23 @@ class ImageTools{
         }
 
         if (!$operate_flag){
-            return ['status'=>false, 'info'=>'帧错误，创建GD对象失败'];
+            throw new \RuntimeException('帧错误，创建GD对象失败') ;
         }
 
         $result_gif = $result_encoder->encode();
 
-        /*
-        $save_fp = fopen($savePath, 'wb+') ;  //  保存图片，需要以二进制写模式打开文件
-        fwrite($save_fp, $result_gif) ;
-        fclose($save_fp) ;
-        */
+        if ($save_path){
+            $save_fp = fopen($save_path, 'wb+') ;  //  保存图片，需要以二进制写模式打开文件
+            fwrite($save_fp, $result_gif) ;
+            fclose($save_fp) ;
 
-        header("content-type: image/gif");
-        echo $result_gif ;
+            return true;
+        }else{
 
+            return $result_gif ;
 
-        return ['status'=>true, 'info'=>'ok'];
+        }
+
     }
 
 
