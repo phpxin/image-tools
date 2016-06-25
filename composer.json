@@ -3,6 +3,7 @@
     "description": "lixin ImageTools",
     "keywords": ["lixin", "ImageTools"],
     "homepage": "https://github.com/phpxin/image-tools",
+    "license": "MIT",
     "type": "project",
     "minimum-stability": "stable",
     "require": {
