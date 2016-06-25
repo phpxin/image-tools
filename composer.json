@@ -1,17 +1,14 @@
 {
     "name": "lixin/image-tools",
-    "description": "lixin ImageTools",
-    "keywords": ["lixin", "ImageTools"],
-    "homepage": "https://github.com/phpxin/image-tools",
-    "license": "MIT",
-    "type": "project",
     "require": {
-        "intervention/image" : "dev-master",
-		"intervention/gif" : "dev-master"
+        "intervention/image": "dev-master",
+        "intervention/gif": "dev-master"
     },
-	"autoload": {
-        "psr-0": {
-            "lixin\\": "src"
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "llxx",
+            "email": "lixin65535@126.com"
         }
-    }
+    ]
 }
