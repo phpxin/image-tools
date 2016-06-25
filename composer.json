@@ -1,0 +1,12 @@
+{
+    "name": "lixin/ImageTools",
+    "description": "lixin ImageTools",
+    "keywords": ["lixin", "ImageTools"],
+    "homepage": "https://github.com/phpxin/ImageTools",
+    "type": "project",
+    "minimum-stability": "stable",
+    "require": {
+        "intervention/image" : "dev-master",
+		"intervention/gif" : "dev-master"
+    }
+}
