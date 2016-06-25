@@ -14,7 +14,7 @@
     ],
 	"autoload": {
         "psr-4": {
-            "lixin\\": "src",
+            "lixin\\": "src"
         }
     }
 }
