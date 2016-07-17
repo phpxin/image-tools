@@ -1,5 +1,5 @@
 {
-    "name": "lixin/image-tools",
+    "name": "phpxin/image-tools",
 	"minimum-stability": "dev",
     "require": {
         "intervention/image": "dev-master",
@@ -8,7 +8,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "llxx",
+            "name": "phpxin",
             "email": "lixin65535@126.com"
         }
     ],
