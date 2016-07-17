@@ -6,7 +6,7 @@
  * Time: 上午 11:32
  */
 
-namespace lixin ;
+namespace Phpxin\Tools ;
 use \Intervention\Image\ImageManagerStatic as Image;
 
 class ImageTools{
