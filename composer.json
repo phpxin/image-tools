@@ -14,7 +14,7 @@
     ],
 	"autoload": {
         "psr-4": {
-            "Phpxin\\Tools": "src/Phpxin/Tools"
+            "Phpxin\\Tools\\": "src/Phpxin/Tools"
         }
     }
 }
