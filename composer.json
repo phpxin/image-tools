@@ -1,5 +1,5 @@
 {
-    "name": "phpxin/image-tools",
+    "name": "Phpxin/Tools",
 	"minimum-stability": "dev",
     "require": {
         "intervention/image": "dev-master",
